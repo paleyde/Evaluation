@@ -17,7 +17,7 @@ CREATE TABLE Stock (
     company_ID INTEGER,
     exchange_ID INTEGER,
     FOREIGN KEY (company_ID) REFERENCES Company(company_id),
-    FOREIGN KEY (exchange_ID) REFERENCES Exchange(exchange_id),   
+    FOREIGN KEY (exchange_ID) REFERENCES Exchange(exchange_id)  
  );
 
 CREATE TABLE Price (
@@ -33,6 +33,4 @@ CREATE TABLE Price (
     FOREIGN KEY (stock_ID) REFERENCES Stock(stock_id),
     PRIMARY KEY (stock_ID, UpdatingDates)
  );
-
-
 
