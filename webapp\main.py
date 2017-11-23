@@ -27,27 +27,27 @@ class Home(object):
 
         c.execute("SELECT * from Exchange")
         conn.commit()
-        t = ['SL NO.      CODE       NAME','-----      ------       -------']
+        t = ['\tSL NO.\t\t CODE\t\t\t NAME','\t----- \t\t------ \t\t\t-------']
         all_cols = c.fetchall()
         for col in all_cols:
             
-            t.append('{0}          {1}           {2}'.format(col[0], col[1], col[2]))
+            t.append('\t{0}\t\t{1}\t\t\t {2}'.format(col[0], col[1], col[2]))
             
         c.execute("SELECT * from Company")
         conn.commit()
-        t1 = ['SL NO.      NAME       CODE','-----        ------         -------']
+        t1 = ['\tSL NO.\t\t CODE\t\t\tNAME','\t-----\t\t--------\t\t----------']
         all_cols1 = c.fetchall()
         for col1 in all_cols1:
             
-            t1.append('{0}          {1}           {2}'.format(col1[0], col1[1], col1[2]))
+            t1.append('\t{0}\t\t{1}\t\t\t{2}'.format(col1[0], col1[1], col1[2]))
             
         c.execute("SELECT * from Stock")
         conn.commit()
-        t2 = ['SL NO.      SYMBOL       COMPANYid        EXCHANGEid','-----        ------         -------      -------']
+        t2 = ['\tSL NO.\t\t SYMBOL\t\t\tCOMPANYid\t\t EXCHANGEid','\t------\t\t------\t\t\t -------\t\t -------']
         all_cols2 = c.fetchall()
         for col2 in all_cols2:
             
-            t2.append('{0}          {1}           {2}            {3}'.format(col2[0], col2[1], col2[2], col2[3]))     
+            t2.append('\t{0}\t\t{1}\t\t\t {2}\t\t\t{3}'.format(col2[0], col2[1], col2[2], col2[3]))     
         conn.close()       
             
         if form.market == "Exchange" :
