@@ -12,7 +12,7 @@ CREATE TABLE Exchange (
  ); 
 
 CREATE TABLE Stock (
-    Stock_id INTEGER ,
+    Stock_id INTEGER PRIMARY KEY,
     symbol TEXT,
     company_id INTEGER,
     exchange_id INTEGER,
