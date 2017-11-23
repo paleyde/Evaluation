@@ -14,8 +14,8 @@ CREATE TABLE Exchange (
 CREATE TABLE Stock (
     Stock_id INTEGER PRIMARY KEY,
     symbol TEXT,
-    company_id INTEGER,
-    exchange_id INTEGER,
+    company_ID INTEGER,
+    exchange_ID INTEGER,
     FOREIGN KEY (company_ID) REFERENCES Company(company_id),
     FOREIGN KEY (exchange_ID) REFERENCES Exchange(exchange_id),   
  );
@@ -29,6 +29,7 @@ CREATE TABLE Price (
     last_price FLOAT,
     turnover FLOAT,
     UpdatingDates DATE,
+    stock_ID INTEGER,
     FOREIGN KEY (stock_ID) REFERENCES Stock(stock_id),
     PRIMARY KEY (stock_ID, UpdatingDates)
  );
